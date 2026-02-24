@@ -13,7 +13,7 @@ const experiences = [
     role: "Data Structures & Algorithms",
     company: "Self-Driven Practice",
     description:
-      "Solved 200+ DSA problems focusing on arrays, trees, graphs, dynamic programming, and system design fundamentals. Strengthened problem-solving and optimization skills.",
+      "Solved 200+ DSA problems focusing on arrays, strings, stacks, queues, linked List and system design fundamentals. Strengthened problem-solving and optimization skills.",
     technologies: ["C++", "STL", "LeetCode", "OOP"],
     current: false,
   },
