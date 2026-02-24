@@ -75,6 +75,7 @@ export const Navbar = () => {
               <a
                 href={link.href}
                 key={index}
+                onClick={() => setisMobileMenuOpen(false)}
                 className="text-lg px-4 py-2 text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
               >
                 {link.label}
@@ -82,7 +83,9 @@ export const Navbar = () => {
             ))}
 
             {/* CTA BUTTON */}
-            <Button size="sm">Contact me</Button>
+            <Button size="sm" onClick={() => setisMobileMenuOpen(false)}>
+              Contact me
+            </Button>
           </div>
         </div>
       )}
