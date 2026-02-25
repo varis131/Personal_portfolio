@@ -25,9 +25,9 @@ const skills = [
 
 export const Hero = () => {
   return (
-    <section className=" relative min-h-screen flex items-center overflow-hidden">
+    <section className=" relative min-h-screen flex items-center overflow-hidden ">
       {/* bg */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <img
           src="/hero-bg.jpg"
           alt="hero_bg_image"
@@ -35,24 +35,32 @@ export const Hero = () => {
         />
 
         <div className=" absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
-      </div>
+      </div> */}
 
-      {/* Green Dots */}
+      {/* Premium Floating Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
-          <div
-            className="absolute w-1.5 h-1.5 rounded-full opacity-60"
-            style={{
-              backgroundColor: "#20B2A6",
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${
-                15 + Math.random() * 20
-              }s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
-            }}
-          />
-        ))}
+        {[...Array(40)].map((_, i) => {
+          const size = Math.random() * 4 + 2; // 2px - 6px
+          const duration = 20 + Math.random() * 20;
+
+          return (
+            <div
+              key={i}
+              className="absolute rounded-full blur-[1px]"
+              style={{
+                width: `${size}px`,
+                height: `${size}px`,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                background:
+                  "radial-gradient(circle, rgba(59,130,246,0.8) 0%, rgba(6,182,212,0.4) 60%, transparent 100%)",
+                animation: `floatParticle ${duration}s ease-in-out infinite`,
+                animationDelay: `${Math.random() * 10}s`,
+                opacity: 0.7,
+              }}
+            />
+          );
+        })}
       </div>
 
       {/*content section of hero page  */}
@@ -129,7 +137,7 @@ export const Hero = () => {
               <div className=" absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
               <div className=" relative glass rounded-3xl p-2 glow-border">
                 <img
-                  src="/profile-photo.jpg"
+                  src="#"
                   alt="VARIS"
                   className=" w-110 h-110 aspect-[4/5] object-cover rounded-2xl"
                 />

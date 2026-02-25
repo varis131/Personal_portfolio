@@ -66,7 +66,7 @@ export const Testimonials = () => {
         mx-auto mb-16"
         >
           <span
-            className="text-secondary-foreground 
+            className="text-primary-foreground 
           text-sm font-medium tracking-wider 
           uppercase animate-fade-in"
           >
@@ -75,7 +75,7 @@ export const Testimonials = () => {
           <h2
             className="text-4xl md:text-5xl 
           font-bold mt-4 mb-6 animate-fade-in 
-          animation-delay-100 text-secondary-foreground"
+          animation-delay-100 text-primary"
           >
             Kind words from{" "}
             <span

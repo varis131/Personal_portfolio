@@ -40,7 +40,7 @@ export const Experience = () => {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <span
-            className="text-secondary-foreground text-sm
+            className="text-primary-foreground text-sm
            font-medium tracking-wider uppercase animate-fade-in"
           >
             Career Journey
@@ -48,7 +48,7 @@ export const Experience = () => {
           <h2
             className="text-4xl md:text-5xl font-bold
            mt-4 mb-6 animate-fade-in animation-delay-100
-            text-secondary-foreground"
+            text-primary"
           >
             Experience that{" "}
             <span className="font-serif italic font-normal text-white">

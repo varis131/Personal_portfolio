@@ -2,40 +2,22 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 const projects = [
   {
-    title: "Fintech Dashboard",
+    title: "ECOMZY –Shopping Cart App",
     description:
-      "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.",
-    image: "/projects/project1.png",
-    tags: ["React", "Typescript", "NodeJS"],
+      "Developed a responsive shopping cart platform using React and Tailwind CSS with efficient state management. Implemented dynamic cart functionality, reusable components, optimized rendering, and clean UI architecture focused on performance and scalability.",
+    image: "/projects/ecomzy-mockup.png",
+    tags: ["React", "JavaScript", "Tailwind CSS", "State Management"],
     link: "#",
-    github: "#",
+    github: "https://github.com/varis131/Shopping_cart",
   },
   {
-    title: "E-Commerce Platform",
+    title: "Modern Testimonial Showcase Platform",
     description:
-      "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
-    image: "/projects/project2.png",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
+      "A responsive testimonial website built using React and Tailwind CSS, featuring dynamic card layouts, smooth animations, and clean UI components designed to highlight user feedback effectively.",
+    image: "/projects/testimonial.png",
+    tags: ["React", "JavaScript", "Tailwind CSS"],
     link: "#",
-    github: "#",
-  },
-  {
-    title: "AI Writing Assistant",
-    description:
-      "An intelligent writing tool powered by GPT-4, helping users create better content faster.",
-    image: "/projects/project3.png",
-    tags: ["React", "OpenAI", "Python", "FastAPI"],
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "Project Management Tool",
-    description:
-      "A collaborative workspace for teams with real-time updates, task tracking, and integrations.",
-    image: "/projects/project4.png",
-    tags: ["Next.js", "Socket.io", "MongoDB", "Redis"],
-    link: "#",
-    github: "#",
+    github: "https://github.com/varis131/Testimonial_Review",
   },
 ];
 
@@ -48,10 +30,10 @@ export const Projects = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-16">
-          <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
+          <span className="text-primary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
             Featured Work
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-primary">
             Projects that
             <span className="font-serif italic font-normal text-white">
               {" "}
@@ -94,6 +76,8 @@ export const Projects = () => {
                   </a>
                   <a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                   >
                     <Github className="w-5 h-5" />
