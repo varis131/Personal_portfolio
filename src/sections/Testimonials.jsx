@@ -4,35 +4,35 @@ import { useState } from "react";
 const testimonials = [
   {
     quote:
-      "Pedro is one of the most talented engineers I've worked with. His attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
-    author: "Sarah Chen",
-    role: "CTO, Tech Innovators Inc.",
+      "Working with Varis on our e-commerce project was a great experience. His understanding of React and clean UI design really helped us deliver a smooth and scalable solution.",
+    author: "Jai Pandey",
+    role: "Frontend Developer",
     avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+      "/avatars/jai.jpeg",
   },
   {
     quote:
-      "Working with Pedro was a game-changer for our project. He delivered ahead of schedule with code quality that set a new standard for our team.",
-    author: "Michael Rodriguez",
-    role: "Product Manager, Digital Solutions",
+      "Varis has a strong grasp of full stack development and problem-solving. His ability to structure components and manage state efficiently made our collaboration seamless.",
+    author: "Ankush Yadav",
+    role: "Full Stack Developer",
     avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+      "/avatars/ankush.jpeg",
   },
   {
     quote:
-      "Pedro's expertise in React and TypeScript helped us rebuild our entire frontend in record time. His architectural decisions continue to pay dividends.",
-    author: "Emily Watson",
-    role: "Engineering Lead, StartUp Labs",
+      "What stands out about Varis is his consistency and attention to detail. Whether it's UI polish or backend logic, he approaches everything with clarity and precision.",
+    author: "Samarth Goel",
+    role: "Software Developer",
     avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
+      "/avatars/samarth.jpeg",
   },
   {
     quote:
-      "Not only is Pedro technically brilliant, but he's also a fantastic communicator and team player. He elevated everyone around him.",
-    author: "David Kim",
-    role: "CEO, Innovation Hub",
+      "Varis combines technical skills with a great learning mindset. He quickly adapts to new technologies and always looks for better, scalable solutions.",
+    author: "Rishabh Verma",
+    role: "Backend Developer",
     avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+      "/avatars/rishabh.jpeg",
   },
 ];
 
