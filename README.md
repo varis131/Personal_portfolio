@@ -1,16 +1,86 @@
-# React + Vite
+# 💼 Varis | Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <a href="https://dev-varis.vercel.app/">
+    <img src="https://img.shields.io/badge/Live-Portfolio-000?style=for-the-badge&logo=vercel" />
+  </a>
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Made%20With-React-blue?style=for-the-badge&logo=react" />
+</p>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Website
 
-## React Compiler
+👉 https://dev-varis.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📖 About The Project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This is my personal developer portfolio website built to showcase:
+
+- 👨‍💻 My Projects  
+- 🛠 My Technical Skills  
+- 📄 My Resume  
+- 📬 Contact Information  
+
+The goal of this portfolio is to present my work in a clean, modern, and professional way.
+
+---
+
+## 🛠 Tech Stack
+
+- ⚛ React.js  
+- 🎨 Tailwind CSS  
+- 🧠 JavaScript (ES6+)  
+- 🚀 Vercel (Deployment)  
+
+---
+
+## ✨ Features
+
+- ✅ Fully Responsive Design  
+- ✅ Clean & Modern UI  
+- ✅ Smooth Navigation  
+- ✅ Optimized Performance  
+- ✅ Project Showcase Section  
+- ✅ Contact Section  
+
+---
+
+## 📂 Project Structure
+
+```
+portfolio/
+│
+├── public/
+├── src/
+│   ├── components/
+│   ├── assets/
+│   ├── pages/
+│   └── App.js
+│
+├── package.json
+└── README.md
+```
+
+---
+
+## 📬 Connect With Me
+
+- 💼 LinkedIn: Add your LinkedIn link  
+- 🐙 GitHub: Add your GitHub profile link  
+- 📧 Email: Add your email  
+
+---
+
+## ⭐ Support
+
+If you like this project, please give it a ⭐ on GitHub.
+
+---
+
+<p align="center">
+  Made with ❤️ by Varis
+</p>
