@@ -1,17 +1,20 @@
 import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+
 const projects = [
   {
-    title: "ECOMZY –Shopping Cart App",
+    title: "ECOMZY",
+    subtitle: "Shopping Cart App",
     description:
       "Developed a responsive shopping cart platform using React and Tailwind CSS with efficient state management. Implemented dynamic cart functionality, reusable components, optimized rendering, and clean UI architecture focused on performance and scalability.",
     image: "/projects/ecomzy-mockup.png",
     tags: ["React", "JavaScript", "Tailwind CSS", "State Management"],
-    link: "#",
+    link: "https://ecomzyshop.vercel.app/",
     github: "https://github.com/varis131/Shopping_cart",
   },
   {
-    title: "Modern Testimonial Showcase Platform",
+    title: "Modern Testimonial",
+    subtitle: "Showcase Platform",
     description:
       "A responsive testimonial website built using React and Tailwind CSS, featuring dynamic card layouts, smooth animations, and clean UI components designed to highlight user feedback effectively.",
     image: "/projects/testimonial.png",
@@ -23,105 +26,103 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-32 relative overflow-hidden">
-      {/* Bg glows */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="projects" className="py-24 relative overflow-hidden bg-[#0A0A0B]">
+      {/* Deep ambient background spots */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-900/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-900/10 rounded-full blur-[120px] pointer-events-none" />
+      
+      <div className="container mx-auto px-6 relative z-10 w-full">
+        
         {/* Section Header */}
-        <div className="text-center mx-auto max-w-3xl mb-16">
-          <span className="text-primary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-            Featured Work
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-primary">
-            Projects that
-            <span className="font-serif italic font-normal text-white">
-              {" "}
-              make an impact.
-            </span>
-          </h2>
-          <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            A selection of my recent work, from complex web applications to
-            innovative tools that solve real-world problems.
-          </p>
+        <div className="flex flex-col items-center mb-16 relative">
+          <h2 className="text-4xl md:text-5xl font-bold text-cyan-500 tracking-wide mb-6">Featured Works</h2>
+          <div className="w-56 h-px bg-cyan-700/50" />
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-3  gap-6">
-          {projects.map((project, idx) => (
-            <div
-              key={idx}
-              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
-              style={{ animationDelay: `${(idx + 1) * 100}ms` }}
-            >
-              {/* Image */}
-              <div className="relative overflow-hidden aspect-video">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div
-                  className="absolute inset-0 
-                bg-gradient-to-t from-card via-card/50
-                 to-transparent opacity-60"
-                />
-                {/* Overlay Links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a
-                    href={project.link}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <ArrowUpRight className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
+        {/* Timeline wrapper */}
+        <div className="relative max-w-6xl mx-auto mt-10">
+          {/* Main vertical line */}
+          <div className="hidden lg:block absolute left-1/2 top-[-40px] bottom-[-40px] w-px bg-cyan-700/50 -translate-x-1/2 z-0" />
+          
+          {/* Projects Component Mapping */}
+          {projects.map((project, idx) => {
+             const isLeftImage = idx % 2 === 0;
 
-              {/* Content */}
-              <div className="p-6 space-y-4">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <ArrowUpRight
-                    className="w-5 h-5 
-                  text-muted-foreground group-hover:text-primary
-                   group-hover:translate-x-1 
-                   group-hover:-translate-y-1 transition-all"
-                  />
-                </div>
-                <p className="text-muted-foreground text-sm">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIdx) => (
-                    <span
-                      key={tagIdx}
-                      className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+             return (
+               <div key={idx} className={`relative w-full flex flex-col lg:flex-row items-center mb-24 lg:mb-32 z-10 gap-16 lg:gap-0 group`}>
+                 
+                 {/* Connection Horizontal Line */}
+                 <div 
+                   className="hidden lg:block absolute top-1/2 h-px bg-cyan-700/50 -translate-y-1/2 z-0 transition-all duration-700 group-hover:bg-cyan-400" 
+                   style={{ 
+                     width: 'calc(50% - 2rem)', 
+                     [isLeftImage ? 'left' : 'right']: '2rem', 
+                   }}
+                 />
 
-        {/* View All CTA */}
-        <div className="text-center mt-12 animate-fade-in animation-delay-500">
-          <AnimatedBorderButton>
-            View All Projects
-            <ArrowUpRight className="w-5 h-5" />
-          </AnimatedBorderButton>
+                 {/* Center Dot */}
+                 <div className="hidden lg:block absolute left-1/2 top-1/2 w-4 h-4 rounded-full border-[3px] border-cyan-400 bg-[#0A0A0B] -translate-x-1/2 -translate-y-1/2 z-20 shadow-[0_0_12px_rgba(34,211,238,0.7)] group-hover:bg-cyan-400 transition-colors duration-300" />
+
+                 {/* Image Panel */}
+                 <div className={`w-full lg:w-1/2 flex justify-center order-2 ${isLeftImage ? 'lg:order-1 lg:pr-14' : 'lg:order-2 lg:pl-14'}`}>
+                    <div className="relative w-full max-w-lg mx-auto transform group-hover:-translate-y-2 transition-transform duration-500">
+                       
+                       {/* Link Button floating perfectly above laptop */}
+                       <div className="absolute -top-12 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300 z-30">
+                          <a href={project.link} className={`px-5 py-2 rounded bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-semibold shadow-[0_0_15px_rgba(6,182,212,0.4)] flex items-center gap-2 transition-colors`}>
+                             Live View <ArrowUpRight className="w-4 h-4" />
+                          </a>
+                       </div>
+                       
+                       {/* Laptop Screen */}
+                       <div className="relative w-full aspect-[16/10.5] bg-zinc-950 rounded-t-xl lg:rounded-t-2xl border-[3px] md:border-[6px] border-[#222] flex flex-col overflow-hidden shadow-[0_0_30px_rgba(34,211,238,0.1)] relative z-10">
+                           {/* Notch / Camera dot */}
+                           <div className="absolute top-1 lg:top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#111] rounded-full z-20"></div>
+                           <img src={project.image} alt={project.title} className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-[1.03]" />
+                           <div className="absolute inset-0 bg-[#0A0A0B]/20 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
+                       </div>
+                       
+                       {/* Laptop Base */}
+                       <div className="relative w-[112%] -left-[6%] h-3 md:h-4 bg-gradient-to-b from-[#444] to-[#111] rounded-b-xl lg:rounded-b-[20px] shadow-[0_20px_40px_rgba(0,0,0,0.8)] flex justify-center items-start border-t border-[#666] z-0">
+                           <div className="w-16 md:w-24 h-1 lg:h-1.5 bg-[#222] rounded-b-md"></div>
+                       </div>
+                       
+                    </div>
+                 </div>
+
+                 {/* Text Panel */}
+                 <div className={`w-full lg:w-1/2 order-1 ${isLeftImage ? 'lg:order-2 lg:pl-14' : 'lg:order-1 lg:pr-14'}`}>
+                    <div className="flex flex-col space-y-2 text-left">
+                       <h3 className={`text-4xl md:text-[40px] font-bold text-foreground group-hover:text-cyan-400 transition-colors duration-500 tracking-tight leading-none`}>
+                         {project.title}
+                       </h3>
+                       <p className={`text-lg md:text-xl font-medium text-cyan-500/80 mb-4`}>
+                         ({project.subtitle})
+                       </p>
+
+                       <p className="text-zinc-300 text-[15px] md:text-base leading-relaxed mt-4 mb-6 relative">
+                         {project.description}
+                       </p>
+
+                       <div className="flex flex-wrap gap-2.5 mb-6">
+                         {project.tags.map((tag, tagIdx) => (
+                           <span key={tagIdx} className="px-3.5 py-1 text-[11px] md:text-xs font-medium rounded-full border border-zinc-600 text-zinc-300 hover:text-cyan-100 hover:border-cyan-400/50 transition-colors bg-transparent">
+                             #{tag.toLowerCase()}
+                           </span>
+                         ))}
+                       </div>
+
+                       <div className="flex items-center gap-4">
+                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors text-sm font-medium">
+                            <Github className="w-5 h-5" /> Source Code
+                          </a>
+                       </div>
+                    </div>
+                 </div>
+
+               </div>
+             )
+          })}
         </div>
       </div>
     </section>

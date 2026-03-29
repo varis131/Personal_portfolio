@@ -41,6 +41,10 @@
   .font-serif {
     font-family: "Playfair Display", serif;
   }
+
+  .font-space {
+    font-family: "Space Grotesk", sans-serif;
+  }
 }
 
 @layer components {
@@ -66,6 +70,21 @@
       0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
   }
+
+  .text-gradient-animate {
+    background: linear-gradient(
+      to right,
+      var(--color-primary),
+      #ff007f,
+      #00f0ff,
+      var(--color-primary)
+    );
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient-sweep 3s linear infinite;
+  }
 }
 
 @layer utilities {
@@ -79,6 +98,18 @@
       opacity: 1;
       transform: translateY(0);
       filter: blur(0);
+    }
+  }
+
+  @keyframes gradient-sweep {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 

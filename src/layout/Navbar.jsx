@@ -55,7 +55,9 @@ export const Navbar = () => {
 
         {/* CTA BUTTON */}
         <div className="hidden md:block">
-          <Button size="sm">Contact me</Button>
+          <Button size="sm" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+            Contact me
+          </Button>
         </div>
 
         {/* mobile menu button */}
@@ -83,7 +85,10 @@ export const Navbar = () => {
             ))}
 
             {/* CTA BUTTON */}
-            <Button size="sm" onClick={() => setisMobileMenuOpen(false)}>
+            <Button size="sm" onClick={() => {
+              setisMobileMenuOpen(false);
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}>
               Contact me
             </Button>
           </div>
