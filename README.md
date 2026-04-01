@@ -69,9 +69,9 @@ portfolio/
 
 ## 📬 Connect With Me
 
-- 💼 LinkedIn: Add your LinkedIn link  
-- 🐙 GitHub: Add your GitHub profile link  
-- 📧 Email: Add your email  
+- 💼 LinkedIn:  
+- 🐙 GitHub: https://github.com/varis131  
+- 📧 Email: movaris85@gmail.com  
 
 ---
 
