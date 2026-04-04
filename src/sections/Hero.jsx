@@ -102,14 +102,6 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Custom Cursor Glow */}
-      <div 
-        className="pointer-events-none fixed top-0 left-0 w-[400px] h-[400px] rounded-full mix-blend-screen z-50 transition-opacity duration-300"
-        style={{
-          background: "radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 60%)",
-          transform: `translate(${mousePosition.x - 200}px, ${mousePosition.y - 200}px)`,
-        }}
-      />
 
       {/* Premium Animated Background Meshes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
