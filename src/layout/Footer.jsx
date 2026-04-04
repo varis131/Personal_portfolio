@@ -2,7 +2,7 @@ import { Github, Linkedin, Twitter, Heart } from "lucide-react";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/varis131", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/varis-35b07a303/", label: "LinkedIn" },
   { icon: Twitter, href: "#", label: "Twitter" },
 ];
 

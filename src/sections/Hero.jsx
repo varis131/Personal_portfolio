@@ -160,7 +160,7 @@ export const Hero = () => {
         <div className="w-[1px] h-16 bg-border mx-auto mb-2" />
         {[
           { icon: Github, href: "https://github.com/varis131" },
-          { icon: Linkedin, href: "#" },
+          { icon: Linkedin, href: "https://www.linkedin.com/in/varis-35b07a303/" },
           { icon: Twitter, href: "#" },
           { icon: Instagram, href: "#" },
         ].map((social, idx) => (
