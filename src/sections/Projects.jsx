@@ -3,6 +3,24 @@ import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 
 const projects = [
   {
+    title: "Empify | Employee Management System",
+    subtitle: "Full-Stack Workforce Management Platform",
+    description:
+      "Built a full-stack employee management system that streamlines workforce operations through dedicated admin and employee dashboards. The platform enables attendance tracking, leave management, employee administration, profile management, and payslip generation with secure JWT-based authentication. Designed a responsive user interface and implemented scalable backend APIs using React, Node.js, Express, and MongoDB.",
+    image: "/projects/ems.png",
+    tags: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+      "JWT",
+      "Mongoose",
+    ],
+    link: "https://emsdev-two.vercel.app/login",
+    github: "https://github.com/varis131/Empify-Employee-Management-System",
+  },
+  {
     title: "Intelliview | AI Interview Preparation Platform",
     subtitle: "AI-Powered Career Tool",
     description:
@@ -95,6 +113,8 @@ export const Projects = () => {
                     <div className="absolute -top-12 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300 z-30">
                       <a
                         href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={`px-5 py-2 rounded bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-semibold shadow-[0_0_15px_rgba(6,182,212,0.4)] flex items-center gap-2 transition-colors`}
                       >
                         Live View <ArrowUpRight className="w-4 h-4" />
