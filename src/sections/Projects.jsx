@@ -47,16 +47,6 @@ const projects = [
     link: "https://ecomzyshop.vercel.app/",
     github: "https://github.com/varis131/Shopping_cart",
   },
-  {
-    title: "Modern Testimonial",
-    subtitle: "Showcase Platform",
-    description:
-      "A responsive testimonial website built using React and Tailwind CSS, featuring dynamic card layouts, smooth animations, and clean UI components designed to highlight user feedback effectively.",
-    image: "/projects/testimonial.png",
-    tags: ["React", "JavaScript", "Tailwind CSS"],
-    link: "#",
-    github: "https://github.com/varis131/Testimonial_Review",
-  },
 ];
 
 export const Projects = () => {
