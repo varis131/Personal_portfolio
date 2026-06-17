@@ -1,0 +1,22 @@
+@keyframes fall-and-drift {
+  0% {
+    transform: translateY(-20px) translateX(0px);
+    opacity: 0;
+  }
+  15% {
+    opacity: var(--op, 0.6);
+  }
+  85% {
+    opacity: var(--op, 0.6);
+  }
+  100% {
+    transform: translateY(105vh) translateX(var(--drift, 30px));
+    opacity: 0;
+  }
+}
+
+.falling-particle {
+  top: -20px;
+  animation: fall-and-drift linear infinite;
+  will-change: transform, opacity;
+}

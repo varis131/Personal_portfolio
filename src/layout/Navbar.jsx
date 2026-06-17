@@ -1,99 +1,49 @@
-import { Button } from "@/components/Button";
-import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#experience", label: "Experience" },
+  { href: "#about",        label: "About" },
+  { href: "#experience",   label: "Experience" },
+  { href: "#projects",     label: "Projects" },
+  { href: "#contact",      label: "Connect" },
 ];
 
 export const Navbar = () => {
-  const [isMobileMenuOpen, setisMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setPastHero(window.scrollY >= window.innerHeight * 0.85);
     };
-
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 transition-all duration-500 border-0 ${isScrolled ? "glass-strong py-3" : "bg-transparent py-3"}  z-50`}
-    >
-      <nav className=" container mx-auto px-6 flex items-center justify-between">
-        <a
-          href="#"
-          className=" text-xl font-bold tracking-tight hover:text-primary"
+    <AnimatePresence>
+      {pastHero && (
+        <motion.div
+          key="navbar"
+          initial={{ opacity: 0, y: -16 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -16 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+          className="fixed top-5 left-1/2 -translate-x-1/2 z-50"
         >
-          VARIS<span className="text-primary">.</span>
-        </a>
-
-        {/* Dekstop navbar */}
-        <div className=" hidden md:flex items-center gap-1">
-          <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
-            {navLinks.map((link, index) => (
+          {/* Pill container */}
+          <nav className="flex items-center gap-1 px-2 py-2 rounded-full liquid-glass bg-[rgba(20,20,22,0.75)] backdrop-blur-md shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+            {navLinks.map((link) => (
               <a
+                key={link.href}
                 href={link.href}
-                key={index}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
+                className="px-4 py-1.5 rounded-full text-sm text-white/60 hover:text-white hover:bg-white/8 transition-all duration-200 whitespace-nowrap"
               >
                 {link.label}
               </a>
             ))}
-          </div>
-        </div>
-
-        {/* CTA BUTTON */}
-        <div className="hidden md:block">
-          <Button size="sm" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-            Contact me
-          </Button>
-        </div>
-
-        {/* mobile menu button */}
-        <button
-          className="md:hidden p-2 text-foreground cursor-pointer "
-          onClick={() => setisMobileMenuOpen((prev) => !prev)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </nav>
-
-      {/* mobile menu */}
-      {isMobileMenuOpen && (
-        <div className=" md:hidden glass-strong animate-fade-in">
-          <div className=" container mx-auto px-6 py-6 flex flex-col gap-4  ">
-            {navLinks.map((link, index) => (
-              <a
-                href={link.href}
-                key={index}
-                onClick={() => setisMobileMenuOpen(false)}
-                className="text-lg px-4 py-2 text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
-              >
-                {link.label}
-              </a>
-            ))}
-
-            {/* CTA BUTTON */}
-            <Button size="sm" onClick={() => {
-              setisMobileMenuOpen(false);
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-            }}>
-              Contact me
-            </Button>
-          </div>
-        </div>
+          </nav>
+        </motion.div>
       )}
-    </header>
+    </AnimatePresence>
   );
 };

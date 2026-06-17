@@ -1,47 +1,30 @@
-import { ArrowUpRight, Github } from "lucide-react";
-import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import { ExternalLink, Github } from "lucide-react";
+import FallingParticles from "../components/FallingParticles";
+
 
 const projects = [
   {
-    title: "Empify | Employee Management System",
-    subtitle: "Full-Stack Workforce Management Platform",
+    title: "Empify",
     description:
-      "Built a full-stack employee management system that streamlines workforce operations through dedicated admin and employee dashboards. The platform enables attendance tracking, leave management, employee administration, profile management, and payslip generation with secure JWT-based authentication. Designed a responsive user interface and implemented scalable backend APIs using React, Node.js, Express, and MongoDB.",
+      "Built a full-stack employee management system that streamlines workforce operations through dedicated admin and employee dashboards. Enables attendance tracking, leave management, profile management, and payslip generation with secure JWT-based authentication.",
     image: "/projects/ems.png",
-    tags: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Tailwind CSS",
-      "JWT",
-      "Mongoose",
-    ],
+    tags: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "JWT"],
     link: "https://emsdev-two.vercel.app/login",
     github: "https://github.com/varis131/Empify-Employee-Management-System",
   },
   {
-    title: "Intelliview | AI Interview Preparation Platform",
-    subtitle: "AI-Powered Career Tool",
+    title: "Intelliview",
     description:
-      "Built a full-stack AI-powered interview preparation platform that generates personalized interview strategies based on job descriptions and user profiles. The app provides technical and behavioral questions, skill gap analysis, match score evaluation, and a day-by-day preparation roadmap. Implemented responsive UI with modern SaaS design, optimized API handling, and seamless user experience using React, Node.js, and MongoDB.",
+      "AI-powered interview preparation platform that generates personalized interview strategies based on job descriptions and user profiles. Provides technical and behavioral questions, skill gap analysis, match score evaluation, and a day-by-day preparation roadmap.",
     image: "/projects/intelliview-mockup.png",
-    tags: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Tailwind CSS",
-      "AI Integration",
-    ],
+    tags: ["React", "Node.js", "Express", "MongoDB", "AI Integration"],
     link: "https://gen-ai-project-full-stack.vercel.app",
     github: "https://github.com/varis131/genAi_project-full-stack-",
   },
   {
-    title: "ECOMZY",
-    subtitle: "Shopping Cart App",
+    title: "Ecomzy",
     description:
-      "Developed a responsive shopping cart platform using React and Tailwind CSS with efficient state management. Implemented dynamic cart functionality, reusable components, optimized rendering, and clean UI architecture focused on performance and scalability.",
+      "Responsive shopping cart platform built with React and Tailwind CSS with efficient state management. Features dynamic cart functionality, reusable components, and optimized rendering focused on performance and scalability.",
     image: "/projects/ecomzy-mockup.png",
     tags: ["React", "JavaScript", "Tailwind CSS", "State Management"],
     link: "https://ecomzyshop.vercel.app/",
@@ -49,135 +32,199 @@ const projects = [
   },
 ];
 
+const CornerBrackets = () => (
+  <>
+    <span className="absolute top-3 left-3 w-5 h-5 border-t border-l border-[rgba(255,175,55,0.35)] rounded-tl-sm pointer-events-none" />
+    <span className="absolute top-3 right-3 w-5 h-5 border-t border-r border-[rgba(255,175,55,0.35)] rounded-tr-sm pointer-events-none" />
+    <span className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-[rgba(255,175,55,0.35)] rounded-bl-sm pointer-events-none" />
+    <span className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-[rgba(255,175,55,0.35)] rounded-br-sm pointer-events-none" />
+  </>
+);
+
+const Separator = ({ double = false }) => (
+  <div className="flex items-center justify-center gap-1 my-2">
+    <div className="w-5 h-[3px] rounded-full bg-primary/50" />
+    {double && <div className="w-5 h-[3px] rounded-full bg-primary/50" />}
+  </div>
+);
+
 export const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="py-24 relative overflow-hidden bg-[#0A0A0B]"
-    >
-      {/* Deep ambient background spots */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-900/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-900/10 rounded-full blur-[120px] pointer-events-none" />
+    <section id="projects" className="py-20 lg:py-28 relative overflow-hidden">
 
-      <div className="container mx-auto px-6 relative z-10 w-full">
-        {/* Section Header */}
-        <div className="flex flex-col items-center mb-16 relative">
-          <h2 className="text-4xl md:text-5xl font-bold text-cyan-500 tracking-wide mb-6">
-            Featured Works
+      {/* Falling particles */}
+      <FallingParticles count={35} />
+
+      {/* ── Hero-inspired Background: midnight sky + golden flowers ── */}
+
+      {/* Base: deep midnight blue — matches the night sky in the reference image */}
+      <div className="absolute inset-0 z-0" style={{ background: "linear-gradient(to bottom, #081d33 0%, #040f1c 100%)" }} />
+
+      {/* Top: cool deep-blue sky gradient */}
+      <div className="absolute inset-0 z-0" style={{
+        background: "linear-gradient(to bottom, rgba(13,38,68,0.9) 0%, rgba(8,26,46,0.55) 50%, transparent 100%)"
+      }} />
+
+      {/* Moon Image in rightmost corner */}
+      <div className="absolute top-8 right-0 w-[220px] md:w-[320px] h-[220px] md:h-[320px] pointer-events-none z-0 opacity-60 mix-blend-screen select-none">
+        <img 
+          src="https://images.pexels.com/photos/28284726/pexels-photo-28284726.jpeg" 
+          alt="Moon"
+          className="w-full h-full object-contain object-right-top"
+        />
+      </div>
+
+      {/* Bottom-center: warm golden lantern glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[650px] h-[320px] pointer-events-none z-0" style={{
+        background: "radial-gradient(ellipse, rgba(255,175,55,0.18) 0%, rgba(210,120,10,0.10) 40%, transparent 70%)",
+        filter: "blur(60px)"
+      }} />
+
+      {/* Bottom-left: golden flower glow */}
+      <div className="absolute -bottom-10 -left-10 w-[450px] h-[360px] pointer-events-none z-0" style={{
+        background: "radial-gradient(ellipse at bottom left, rgba(212,140,20,0.32) 0%, rgba(170,90,10,0.15) 45%, transparent 70%)",
+        filter: "blur(70px)"
+      }} />
+
+      {/* Bottom-right: golden flower glow */}
+      <div className="absolute -bottom-10 -right-10 w-[450px] h-[360px] pointer-events-none z-0" style={{
+        background: "radial-gradient(ellipse at bottom right, rgba(212,140,20,0.28) 0%, rgba(170,90,10,0.12) 45%, transparent 70%)",
+        filter: "blur(70px)"
+      }} />
+
+      {/* Top-right: faint cool star-blue wash */}
+      <div className="absolute top-0 right-0 w-[380px] h-[380px] pointer-events-none z-0" style={{
+        background: "radial-gradient(circle, rgba(20,50,120,0.25) 0%, transparent 70%)",
+        filter: "blur(80px)"
+      }} />
+
+      {/* Stars */}
+      {[
+        { top:"5%",  left:"9%"  }, { top:"9%",  left:"30%"  }, { top:"4%",  left:"55%"  },
+        { top:"13%", left:"74%"  }, { top:"7%",  left:"88%"  }, { top:"19%", left:"4%"   },
+        { top:"23%", left:"22%"  }, { top:"16%", left:"50%" }, { top:"21%", left:"70%"  },
+        { top:"10%", left:"83%"  }, { top:"30%", left:"94%"  }, { top:"35%", left:"14%"  },
+        { top:"42%", left:"38%"  }, { top:"26%", left:"62%"  }, { top:"48%", left:"90%"  },
+      ].map((pos, i) => (
+        <span key={i} className="absolute rounded-full pointer-events-none z-0"
+          style={{
+            top: pos.top, left: pos.left,
+            width: i % 3 === 0 ? "2px" : "1.5px",
+            height: i % 3 === 0 ? "2px" : "1.5px",
+            background: `rgba(255,255,255,${i % 4 === 0 ? 0.5 : 0.22})`
+          }}
+        />
+      ))}
+
+      {/* Film grain */}
+      <div className="absolute inset-0 z-[1] opacity-[0.035] pointer-events-none" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+        backgroundSize: "180px 180px"
+      }} />
+
+      <div className="container mx-auto px-6 max-w-4xl relative z-10">
+
+        {/* Section header */}
+        <div className="mb-14">
+          <p className="text-xs font-space tracking-[0.3em] uppercase text-primary mb-3">
+            Quest Log
+          </p>
+          <h2
+            className="text-6xl md:text-7xl font-bold text-foreground mb-4"
+            style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-1px" }}
+          >
+            Projects
           </h2>
-          <div className="w-56 h-px bg-cyan-700/50" />
+          <p className="text-muted-foreground text-sm tracking-wide">
+            legendary encounters conquered, each worth remembering.
+          </p>
         </div>
 
-        {/* Timeline wrapper */}
-        <div className="relative max-w-6xl mx-auto mt-10">
-          {/* Main vertical line */}
-          <div className="hidden lg:block absolute left-1/2 top-[-40px] bottom-[-40px] w-px bg-cyan-700/50 -translate-x-1/2 z-0" />
+        {/* Project cards */}
+        <div className="flex flex-col gap-3 ">
+          {projects.map((project, idx) => (
+            <div key={idx}>
+              {idx === 0 && <Separator />}
 
-          {/* Projects Component Mapping */}
-          {projects.map((project, idx) => {
-            const isLeftImage = idx % 2 === 0;
+              {/* Card — whole card zooms on hover */}
+              <div className="relative rounded-xl border border-[rgba(255,175,55,0.35)] bg-white/[0.025] p-7 sm:p-9
+                             hover:scale-[1.018] hover:border-[rgba(255,175,55,0.65)] hover:bg-white/[0.04]
+                             transition-all duration-300 ease-out cursor-default">
+                <CornerBrackets />
 
-            return (
-              <div
-                key={idx}
-                className={`relative w-full flex flex-col lg:flex-row items-center mb-24 lg:mb-32 z-10 gap-16 lg:gap-0 group`}
-              >
-                {/* Connection Horizontal Line */}
-                <div
-                  className="hidden lg:block absolute top-1/2 h-px bg-cyan-700/50 -translate-y-1/2 z-0 transition-all duration-700 group-hover:bg-cyan-400"
-                  style={{
-                    width: "calc(50% - 2rem)",
-                    [isLeftImage ? "left" : "right"]: "2rem",
-                  }}
-                />
+                {/* Top row: image + title/description */}
+                <div className="flex flex-col sm:flex-row gap-6 items-start">
 
-                {/* Center Dot */}
-                <div className="hidden lg:block absolute left-1/2 top-1/2 w-4 h-4 rounded-full border-[3px] border-cyan-400 bg-[#0A0A0B] -translate-x-1/2 -translate-y-1/2 z-20 shadow-[0_0_12px_rgba(34,211,238,0.7)] group-hover:bg-cyan-400 transition-colors duration-300" />
-
-                {/* Image Panel */}
-                <div
-                  className={`w-full lg:w-1/2 flex justify-center order-2 ${isLeftImage ? "lg:order-1 lg:pr-14" : "lg:order-2 lg:pl-14"}`}
-                >
-                  <div className="relative w-full max-w-lg mx-auto transform group-hover:-translate-y-2 transition-transform duration-500">
-                    {/* Link Button floating perfectly above laptop */}
-                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-300 z-30">
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`px-5 py-2 rounded bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-semibold shadow-[0_0_15px_rgba(6,182,212,0.4)] flex items-center gap-2 transition-colors`}
-                      >
-                        Live View <ArrowUpRight className="w-4 h-4" />
-                      </a>
-                    </div>
-
-                    {/* Laptop Screen */}
-                    <div className="relative w-full aspect-[16/10.5] bg-zinc-950 rounded-t-xl lg:rounded-t-2xl border-[3px] md:border-[6px] border-[#222] flex flex-col overflow-hidden shadow-[0_0_30px_rgba(34,211,238,0.1)] relative z-10">
-                      {/* Notch / Camera dot */}
-                      <div className="absolute top-1 lg:top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#111] rounded-full z-20"></div>
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-[1.03]"
-                      />
-                      <div className="absolute inset-0 bg-[#0A0A0B]/20 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
-                    </div>
-
-                    {/* Laptop Base */}
-                    <div className="relative w-[112%] -left-[6%] h-3 md:h-4 bg-gradient-to-b from-[#444] to-[#111] rounded-b-xl lg:rounded-b-[20px] shadow-[0_20px_40px_rgba(0,0,0,0.8)] flex justify-center items-start border-t border-[#666] z-0">
-                      <div className="w-16 md:w-24 h-1 lg:h-1.5 bg-[#222] rounded-b-md"></div>
-                    </div>
+                  {/* Thumbnail */}
+                  <div className="shrink-0 w-full sm:w-56 h-36 rounded-lg overflow-hidden border border-white/10 bg-card/60">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
-                </div>
 
-                {/* Text Panel */}
-                <div
-                  className={`w-full lg:w-1/2 order-1 ${isLeftImage ? "lg:order-2 lg:pl-14" : "lg:order-1 lg:pr-14"}`}
-                >
-                  <div className="flex flex-col space-y-2 text-left">
+                  {/* Title + description */}
+                  <div className="flex flex-col gap-4 flex-1 min-w-0 pt-1">
                     <h3
-                      className={`text-4xl md:text-[40px] font-bold text-foreground group-hover:text-cyan-400 transition-colors duration-500 tracking-tight leading-none`}
+                      className="text-[1.85rem] font-bold italic text-white leading-tight"
+                      style={{ fontFamily: "'Instrument Serif', serif" }}
                     >
                       {project.title}
                     </h3>
-                    <p
-                      className={`text-lg md:text-xl font-medium text-cyan-500/80 mb-4`}
-                    >
-                      ({project.subtitle})
-                    </p>
-
-                    <p className="text-zinc-300 text-[15px] md:text-base leading-relaxed mt-4 mb-6 relative">
+                    <p className="text-[#a0aab4] text-white leading-[1.85] font-light">
                       {project.description}
                     </p>
-
-                    <div className="flex flex-wrap gap-2.5 mb-6">
-                      {project.tags.map((tag, tagIdx) => (
-                        <span
-                          key={tagIdx}
-                          className="px-3.5 py-1 text-[11px] md:text-xs font-medium rounded-full border border-zinc-600 text-zinc-300 hover:text-cyan-100 hover:border-cyan-400/50 transition-colors bg-transparent"
-                        >
-                          #{tag.toLowerCase()}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="flex items-center gap-4">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors text-sm font-medium"
-                      >
-                        <Github className="w-5 h-5" /> Source Code
-                      </a>
-                    </div>
                   </div>
                 </div>
+
+                {/* Tags row — full width, below both columns */}
+                <div className="flex flex-wrap gap-2 mt-7">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3.5 py-1.5 text-[12px] font-space rounded-md
+                                 border border-white/14 bg-transparent text-white/55
+                                 hover:text-white/85 hover:border-white/28 transition-colors cursor-default"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Links row */}
+                <div className="flex items-center gap-4 mt-5">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg
+                               border border-white/20 bg-white/5 text-white/80
+                               hover:text-white hover:border-white/35 hover:bg-white/10
+                               transition-all duration-200 text-sm font-space"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    Link
+                  </a>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-white/35
+                               hover:text-white/65 transition-colors duration-200 text-sm font-space"
+                  >
+                    <Github className="w-3.5 h-3.5" />
+                    Source
+                  </a>
+                </div>
               </div>
-            );
-          })}
+
+              <Separator double={idx < projects.length - 1} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
+
